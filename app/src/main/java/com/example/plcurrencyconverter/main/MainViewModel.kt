@@ -6,15 +6,15 @@ import androidx.lifecycle.viewModelScope
 import com.example.plcurrencyconverter.data.models.Rates
 import com.example.plcurrencyconverter.util.DispatcherProvider
 import com.example.plcurrencyconverter.util.Resource
-import dagger.hilt.android.lifecycle.HiltViewModel
+//import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import kotlin.math.round
 
-@HiltViewModel
-class MainViewModel @Inject constructor(
+//@HiltViewModel
+class MainViewModel @ViewModelInject constructor(
     private val repository: MainRepository,
     private val dispatchers: DispatcherProvider
 ) : ViewModel() {
