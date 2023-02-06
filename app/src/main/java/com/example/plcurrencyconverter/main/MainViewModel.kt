@@ -1,20 +1,19 @@
 package com.example.plcurrencyconverter.main
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.plcurrencyconverter.data.models.Rates
 import com.example.plcurrencyconverter.util.DispatcherProvider
 import com.example.plcurrencyconverter.util.Resource
-//import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import kotlin.math.round
 
-//@HiltViewModel
-class MainViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val repository: MainRepository,
     private val dispatchers: DispatcherProvider
 ) : ViewModel() {
@@ -36,7 +35,7 @@ class MainViewModel @ViewModelInject constructor(
     ){
         val fromAmount = amountStr.toFloatOrNull()
         if(fromAmount == null) {
-            _conversion.value = CurrencyEvent.Failure("Not a valid")
+            _conversion.value = CurrencyEvent.Failure("Not a valid amount")
             return
         }
 

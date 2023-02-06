@@ -98,8 +98,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnConvert"
         app:layout_constraintEnd_toStartOf="@+id/btnConvert"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnConvert"
-        tools:text="10 EUR = 15.0 USD" />
+        app:layout_constraintTop_toTopOf="@+id/btnConvert" />
 
     <ProgressBar
         android:id="@+id/progressBar"
